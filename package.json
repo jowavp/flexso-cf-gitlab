@@ -1,0 +1,10 @@
+{
+  "name": "flexso-cf-gitlab",
+  "version": "1.0.0",
+  "description": "Docker container to deploy nodejs (mta) applications to SAP cloud Foundry",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "Joachim Van Praet",
+  "license": "ISC"
+}

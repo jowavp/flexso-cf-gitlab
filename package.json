@@ -4,6 +4,10 @@
   "description": "Docker container to deploy nodejs (mta) applications to SAP cloud Foundry",
   "main": "index.js",
   "scripts": {
+    "register-runner": "docker run --rm -it -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register",
+    "start-runner": "docker run -d --name gitlab-runner --restart always -v /srv/gitlab-runner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner:latest",
+    "build": "docker build -t flexso-cf-gitlab:0.0.1 .",
+    "publish": "docker tag flexso-cf-gitlab:0.0.1 jowavp/flexso-cf-gitlab:0.0.1 && docker push jowavp/flexso-cf-gitlab:0.0.1"
   },
   "author": "Joachim Van Praet",
   "license": "ISC"

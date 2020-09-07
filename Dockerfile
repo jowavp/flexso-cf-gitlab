@@ -39,3 +39,8 @@ CMD /bin/bash
 RUN cf -v
 RUN tsc -v
 RUN mbt -v
+
+USER node
+
+RUN mkdir /home/node/app
+WORKDIR /home/node/app

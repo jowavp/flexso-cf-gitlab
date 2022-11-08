@@ -1,4 +1,4 @@
-FROM node:12.18
+FROM node:16
 LABEL maintainer="Joachim Van Praet"
 LABEL version="0.1"
 
@@ -16,8 +16,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 # update package list
 RUN apt-get update
 # Install the cf CLI
-RUN apt-get install -y -q
-RUN apt-get install cf-cli
+RUN apt-get install cf8-cli
 
 # Install MTA plugin
 RUN cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
